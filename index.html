@@ -12,10 +12,10 @@
         :root {
             --bg-color-main: #18181b;       /* Charcoal Zinc */
             --bg-color-alt: #0a192f;        /* Deep Navy */
-            --bg-color-forest: #0d1f1a;     /* Deep Forest Green — NEW */
+            --bg-color-forest: #0d1f1a;     /* Deep Forest Green */
             --accent-main: #9d4edd;
             --accent-secondary: #ff007f;
-            --accent-green: #00e5a0;        /* Mint accent for forest section */
+            --accent-green: #00e5a0;        /* Mint accent */
             --text-base: #f4f4f5;
             --zinc-border: #27272a;
         }
@@ -45,18 +45,6 @@
             z-index: 0;
         }
 
-        .projects-section {
-            background-color: var(--bg-color-forest);
-            border-top: 1px solid rgba(0, 229, 160, 0.12);
-        }
-
-        .navy-section {
-            position: relative;
-            background-color: var(--bg-color-forest);
-            border-top: 1px solid rgba(0, 229, 160, 0.12);
-        }
-
-        /* ── NEW: Deep Forest Section ── */
         .forest-section {
             position: relative;
             background-color: var(--bg-color-forest);
@@ -64,7 +52,6 @@
             overflow: hidden;
         }
 
-        /* Subtle animated grid pattern for the forest section */
         .forest-section::before {
             content: "";
             position: absolute;
@@ -74,19 +61,6 @@
                 linear-gradient(90deg, rgba(0, 229, 160, 0.04) 1px, transparent 1px);
             background-size: 40px 40px;
             z-index: 0;
-        }
-
-        /* Glowing orb in the corner for depth */
-        .forest-section::after {
-            content: "";
-            position: absolute;
-            bottom: -100px;
-            right: -100px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(0, 229, 160, 0.08) 0%, transparent 70%);
-            z-index: 0;
-            pointer-events: none;
         }
 
         .content-container { position: relative; z-index: 1; }
@@ -107,7 +81,6 @@
             transform: translateY(-5px);
         }
 
-        /* Green-tinted cards for forest section */
         .card-forest {
             background: rgba(13, 35, 28, 0.6);
             backdrop-filter: blur(5px);
@@ -137,12 +110,7 @@
             font-weight: 700;
             transition: all 0.3s ease;
         }
-        .btn-green:hover {
-            box-shadow: 0 0 15px rgba(0, 229, 160, 0.4);
-            opacity: 0.9;
-        }
 
-        /* Education timeline */
         .edu-line {
             position: relative;
             padding-left: 2rem;
@@ -156,17 +124,7 @@
             background: var(--accent-green);
             box-shadow: 0 0 8px var(--accent-green);
         }
-        .edu-line::after {
-            content: "";
-            position: absolute;
-            left: 4px; top: 20px;
-            width: 2px;
-            height: calc(100% + 24px);
-            background: linear-gradient(to bottom, rgba(0,229,160,0.3), transparent);
-        }
-        .edu-line:last-child::after { display: none; }
 
-        /* Soft skill pills */
         .skill-pill {
             background: rgba(0, 229, 160, 0.08);
             border: 1px solid rgba(0, 229, 160, 0.2);
@@ -178,18 +136,7 @@
             transition: all 0.25s ease;
             display: inline-block;
         }
-        .skill-pill:hover {
-            background: rgba(0, 229, 160, 0.18);
-            box-shadow: 0 0 10px rgba(0, 229, 160, 0.2);
-        }
 
-        .navy-section input, .navy-section textarea {
-            background: rgba(15, 25, 45, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        input:focus, textarea:focus { border-color: var(--accent-secondary) !important; outline: none; }
-
-        /* Stat counter cards */
         .stat-card {
             background: rgba(0, 229, 160, 0.05);
             border: 1px solid rgba(0, 229, 160, 0.15);
@@ -203,6 +150,12 @@
             color: var(--accent-green);
             line-height: 1;
         }
+
+        input, textarea {
+            background: rgba(15, 25, 45, 0.7) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+        input:focus, textarea:focus { border-color: var(--accent-secondary) !important; outline: none; }
     </style>
 </head>
 <body class="font-sans">
@@ -211,18 +164,17 @@
         <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
             <a href="#" class="text-xl font-bold tracking-tighter">S<span class="neon-purple">T</span>.</a>
             <div class="space-x-8 hidden md:flex text-sm font-medium text-zinc-400">
-                <a href="#about"     class="hover:text-purple-400 transition">About</a>
-                <a href="#skills"    class="hover:text-purple-400 transition">Skills</a>
-                <a href="#education" class="hover:text-green-400 transition">Education</a>
-                <a href="#projects"  class="hover:text-purple-400 transition">Projects</a>
-                <a href="#contact"   class="hover:text-purple-400 transition">Contact</a>
+                <a href="#about"          class="hover:text-purple-400 transition">About</a>
+                <a href="#skills"         class="hover:text-purple-400 transition">Skills</a>
+                <a href="#education"      class="hover:text-green-400 transition">Education</a>
+                <a href="#certifications" class="hover:text-green-400 transition">Certifications</a>
+                <a href="#projects"       class="hover:text-purple-400 transition">Projects</a>
+                <a href="#contact"        class="hover:text-purple-400 transition">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- ── HERO + ABOUT (Charcoal Zinc) ── -->
     <div class="sectional-hero-about">
-        
         <section class="content-container pt-48 pb-32 px-6">
             <div class="max-w-6xl mx-auto">
                 <p class="neon-purple font-mono mb-4" data-aos="fade-up">Hi, my name is</p>
@@ -253,7 +205,6 @@
         </section>
     </div>
 
-    <!-- ── SKILLS (Charcoal Zinc) ── -->
     <section id="skills" class="py-24 px-6" style="background-color: var(--bg-color-forest); border-top: 1px solid rgba(0, 229, 160, 0.12);">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-bold mb-16 text-center text-white" data-aos="fade-down">Technical Arsenal</h2>
@@ -274,156 +225,131 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════════════════════════════
-         NEW SECTION — EDUCATION & SOFT SKILLS (Deep Forest Green)
-         ══════════════════════════════════════════════════════════ -->
     <section id="education" class="forest-section py-24 px-6">
         <div class="content-container max-w-6xl mx-auto">
-
-            <!-- Section header -->
             <div class="flex items-center gap-4 mb-16" data-aos="fade-right">
                 <h2 class="text-3xl font-bold">02. <span class="neon-green">Education</span> & Soft Skills</h2>
                 <div class="h-[1px] flex-grow" style="background: rgba(0,229,160,0.2);"></div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-16">
-
-                <!-- Education Timeline -->
                 <div data-aos="fade-right">
                     <h3 class="neon-green font-mono text-sm mb-10 tracking-widest uppercase">Academic Journey</h3>
                     <div class="space-y-10">
-
                         <div class="edu-line">
                             <div class="card-forest p-6 rounded-xl">
                                 <p class="text-xs font-mono neon-green mb-1">2024 – 2028</p>
                                 <h4 class="text-white font-bold text-lg leading-snug">B.Tech — Computer Science Engineering</h4>
-                                <p class="text-zinc-400 text-sm mt-1">Cybersecurity Specialisation</p>
-                                <p class="text-zinc-500 text-xs mt-1">Galgotias University, Greater Noida</p>
-                                <div class="mt-4 flex items-center gap-3">
-                                    <span class="text-3xl font-extrabold neon-green">9.76</span>
-                                    <span class="text-zinc-500 text-sm">/ 10 CGPA</span>
-                                </div>
+                                <p class="text-zinc-400 text-sm mt-1">Galgotias University | <span class="neon-green">9.76 CGPA</span></p>
                             </div>
                         </div>
-
                         <div class="edu-line">
                             <div class="card-forest p-6 rounded-xl">
                                 <p class="text-xs font-mono neon-green mb-1">2024 — Class XII</p>
                                 <h4 class="text-white font-bold text-lg">Senior Secondary</h4>
-                                <p class="text-zinc-500 text-xs mt-1">Saraswati Vidya Mandir School, Pratapgarh</p>
-                                <div class="mt-4 flex items-center gap-3">
-                                    <span class="text-3xl font-extrabold neon-green">88%</span>
-                                    <span class="text-zinc-500 text-sm">aggregate</span>
-                                </div>
+                                <p class="text-zinc-500 text-sm mt-1">Saraswati Vidya Mandir School | <span class="neon-green">88%</span></p>
                             </div>
                         </div>
-
-                        <div class="edu-line">
-                            <div class="card-forest p-6 rounded-xl">
-                                <p class="text-xs font-mono neon-green mb-1">2022 — Class X</p>
-                                <h4 class="text-white font-bold text-lg">Matriculation</h4>
-                                <p class="text-zinc-500 text-xs mt-1">Saraswati Vidya Mandir School, Pratapgarh</p>
-                                <div class="mt-4 flex items-center gap-3">
-                                    <span class="text-3xl font-extrabold neon-green">88.56%</span>
-                                    <span class="text-zinc-500 text-sm">aggregate</span>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
-                <!-- Right: Stats + Soft Skills -->
                 <div data-aos="fade-left">
-
-                    <!-- Quick Stats -->
-                    <h3 class="neon-green font-mono text-sm mb-6 tracking-widest uppercase">At a Glance</h3>
-                    <div class="grid grid-cols-2 gap-4 mb-12">
-                        <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                    <h3 class="neon-green font-mono text-sm mb-6 tracking-widest uppercase">Soft Skills</h3>
+                    <div class="flex flex-wrap gap-3 mb-12">
+                        <span class="skill-pill">Problem Solving</span>
+                        <span class="skill-pill">Team Collaboration</span>
+                        <span class="skill-pill">Rapid Learning</span>
+                        <span class="skill-pill">Adaptability</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="stat-card">
                             <div class="stat-number">9.76</div>
                             <p class="text-zinc-500 text-xs mt-1">Current CGPA</p>
                         </div>
-                        <div class="stat-card" data-aos="zoom-in" data-aos-delay="150">
+                        <div class="stat-card">
                             <div class="stat-number">2+</div>
-                            <p class="text-zinc-500 text-xs mt-1">Projects Shipped</p>
+                            <p class="text-zinc-500 text-xs mt-1">Projects</p>
                         </div>
-                        <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="stat-number">5+</div>
-                            <p class="text-zinc-500 text-xs mt-1">Technologies Used</p>
-                        </div>
-                        <div class="stat-card" data-aos="zoom-in" data-aos-delay="250">
-                            <div class="stat-number">3</div>
-                            <p class="text-zinc-500 text-xs mt-1">Languages Learned</p>
-                        </div>
-                    </div>
-
-                    <!-- Soft Skills -->
-                    <h3 class="neon-green font-mono text-sm mb-6 tracking-widest uppercase">Soft Skills</h3>
-                    <div class="flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="100">
-                        <span class="skill-pill">Problem Solving</span>
-                        <span class="skill-pill">Team Collaboration</span>
-                        <span class="skill-pill">Communication</span>
-                        <span class="skill-pill">Rapid Learning</span>
-                        <span class="skill-pill">Strategic Thinking</span>
-                        <span class="skill-pill">Adaptability</span>
-                    </div>
-
-                    <!-- CTA -->
-                    <div class="mt-12" data-aos="fade-up" data-aos-delay="200">
-                        <a href="mailto:tiwarishobhit715@gmail.com" class="btn-green px-8 py-3 rounded-md inline-block transition">
-                            <i class="fa fa-envelope mr-2"></i> Hire Me
-                        </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-    <!-- ══════════════════════════════════════════════════════════ -->
 
-    <!-- ── PROJECTS (Charcoal Zinc) ── -->
-    <section id="projects" class="py-24 px-6 projects-section">
+    <section id="certifications" class="py-24 px-6 border-t border-zinc-800" style="background-color: var(--bg-color-forest);">
         <div class="max-w-6xl mx-auto">
             <div class="flex items-center gap-4 mb-16" data-aos="fade-right">
-                <h2 class="text-3xl font-bold">03. Selected Work</h2>
+                <h2 class="text-3xl font-bold">03. <span class="neon-green">Certifications</span></h2>
+                <div class="h-[1px] flex-grow" style="background: rgba(0,229,160,0.2);"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card-forest p-8 rounded-xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fa-solid fa-award text-4xl neon-green"></i>
+                            <span class="text-xs font-mono text-zinc-500">Nov 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Database Programming with SQL</h3>
+                        <p class="text-zinc-400 text-sm mb-4">Oracle Academy Professional Certificate</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1si4RFYSUVJdfMLe_5GdOQGGC5ML1JBOs/view?usp=drive_link" target="_blank" class="inline-flex items-center text-sm neon-green hover:underline gap-2 mt-4">
+                        View Certificate <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+
+                <div class="card-forest p-8 rounded-xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fa-solid fa-certificate text-4xl neon-green"></i>
+                            <span class="text-xs font-mono text-zinc-500">Oct 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Servlets & JSP</h3>
+                        <p class="text-zinc-400 text-sm mb-4">GUVI [HCL] Specialization</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1YSMg7812lDaKXIbdAJPgzq53liIYXO2z/view?usp=drive_link" target="_blank" class="inline-flex items-center text-sm neon-green hover:underline gap-2 mt-4">
+                        View Certificate <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6 border-t border-zinc-800" style="background-color: var(--bg-color-forest);">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center gap-4 mb-16" data-aos="fade-right">
+                <h2 class="text-3xl font-bold">04. Selected Work</h2>
                 <div class="h-[1px] bg-zinc-800 flex-grow"></div>
             </div>
             <div class="grid md:grid-cols-2 gap-10">
-                <div class="group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-transparent p-10 rounded-xl h-full flex flex-col">
-                        <span class="neon-pink font-mono text-xs mb-2">Web Application</span>
-                        <h3 class="text-2xl font-bold mb-4 group-hover:neon-purple transition">Campus Sync</h3>
-                        <p class="text-zinc-400 text-sm mb-8 flex-grow">A centralized campus management platform. Built with Java, JSP, and MySQL to streamline academic operations with role-based access for Admin, Faculty, and Students.</p>
-                        <div class="flex gap-4 text-zinc-500 font-mono text-xs">
-                            <span>Java</span><span>JSP</span><span>MySQL</span><span>Apache Tomcat</span>
-                        </div>
+                <div class="card-transparent p-10 rounded-xl flex flex-col" data-aos="fade-up">
+                    <span class="neon-pink font-mono text-xs mb-2">Web Application</span>
+                    <h3 class="text-2xl font-bold mb-4">Campus Sync</h3>
+                    <p class="text-zinc-400 text-sm mb-8 flex-grow">Centralized campus management platform built with Java, JSP, and MySQL with role-based access.</p>
+                    <div class="flex gap-4 text-zinc-500 font-mono text-xs">
+                        <span>Java</span><span>JSP</span><span>MySQL</span>
                     </div>
                 </div>
-                <div class="group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-transparent p-10 rounded-xl h-full flex flex-col">
-                        <span class="neon-pink font-mono text-xs mb-2">Desktop Application</span>
-                        <h3 class="text-2xl font-bold mb-4 group-hover:neon-purple transition">Bank Management</h3>
-                        <p class="text-zinc-400 text-sm mb-8 flex-grow">A Java Swing desktop application simulating ATM operations. Features include secure login, deposits, withdrawals, balance enquiry, and transaction history using JDBC.</p>
-                        <div class="flex gap-4 text-zinc-500 font-mono text-xs">
-                            <span>Swing</span><span>JDBC</span><span>MySQL</span>
-                        </div>
+                <div class="card-transparent p-10 rounded-xl flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <span class="neon-pink font-mono text-xs mb-2">Desktop Application</span>
+                    <h3 class="text-2xl font-bold mb-4">Bank Management</h3>
+                    <p class="text-zinc-400 text-sm mb-8 flex-grow">Java Swing desktop application simulating ATM operations and secure JDBC transactions.</p>
+                    <div class="flex gap-4 text-zinc-500 font-mono text-xs">
+                        <span>Swing</span><span>JDBC</span><span>MySQL</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── CONTACT (Deep Navy) ── -->
-    <section id="contact" class="py-24 px-6 navy-section">
+    <section id="contact" class="py-24 px-6" style="background-color: var(--bg-color-alt);">
         <div class="max-w-3xl mx-auto text-center content-container">
             <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">Let's Connect</h2>
-            <p class="text-zinc-400 mb-12" data-aos="fade-up" data-aos-delay="100">I am currently looking for software engineering opportunities. My inbox is always open.</p>
-            
-            <div class="card-transparent p-8 md:p-12 rounded-2xl text-left" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card-transparent p-8 md:p-12 rounded-2xl text-left" data-aos="zoom-in">
                 <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
-                        <input type="text"  name="name"     placeholder="Full Name"      class="w-full rounded-md px-4 py-3 text-white" required>
-                        <input type="email" name="_replyto" placeholder="Email Address"  class="w-full rounded-md px-4 py-3 text-white" required>
+                        <input type="text" name="name" placeholder="Full Name" class="w-full rounded-md px-4 py-3 text-white" required>
+                        <input type="email" name="email" placeholder="Email Address" class="w-full rounded-md px-4 py-3 text-white" required>
                     </div>
                     <textarea name="message" rows="5" placeholder="Message" class="w-full rounded-md px-4 py-3 text-white" required></textarea>
                     <button type="submit" class="w-full btn-gradient py-4 rounded-md font-bold transition">Send Message</button>
@@ -432,18 +358,17 @@
         </div>
     </section>
 
-    <footer class="py-12 text-center text-zinc-600 font-mono text-xs border-t border-white/5 navy-section">
-        <div class="flex justify-center gap-6 mb-4 text-lg content-container">
+    <footer class="py-12 text-center text-zinc-600 font-mono text-xs border-t border-white/5" style="background-color: var(--bg-color-alt);">
+        <div class="flex justify-center gap-6 mb-4 text-lg">
             <a href="https://linkedin.com/in/Shobhit-Tiwari-b0b56b31b" class="hover:neon-purple transition"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/shobhit23012007"                class="hover:neon-purple transition"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/shobhit23012007" class="hover:neon-purple transition"><i class="fa-brands fa-github"></i></a>
         </div>
-        <p class="content-container">Built by Shobhit Tiwari &copy; 2026</p>
+        <p>Built by Shobhit Tiwari &copy; 2026</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, easing: 'ease-in-out-sine', once: true, mirror: false });
+        AOS.init({ duration: 800, easing: 'ease-in-out-sine', once: true });
     </script>
-
 </body>
 </html>
